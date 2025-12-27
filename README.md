@@ -15,4 +15,7 @@ This is a simple Supervised machine learning project with well structuerd docume
 - sklearn
 - nltk
 
+## Installation
+Install sklearn `pip install -U scikit-learn`
+
 
