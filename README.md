@@ -18,4 +18,8 @@ This is a simple Supervised machine learning project with well structuerd docume
 ## Installation
 Install sklearn `pip install -U scikit-learn`
 
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+
 
