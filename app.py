@@ -49,16 +49,23 @@ def transform_text(text):
   text = y
   return " ".join(text)
 
-# 1 preprocess text
-transformed_text = transform_text(input_sms)
 
-# 2 vectorize text
-vectorized_text = vectorizer.transform([transformed_text])
 
-# 3 predect output
 predection = ""
+
+
 if st.button("click"):
-  predection = model.predict(vectorized_text)[0]
+  if not input_sms or len(input_sms.strip()) < 5:
+    st.warning("⚠️ Please enter at least 5 characters")
+  else:
+    # 1 preprocess text
+    transformed_text = transform_text(input_sms)
+
+    # 2 vectorize text
+    vectorized_text = vectorizer.transform([transformed_text])
+
+    # 3 predict output
+    predection = model.predict(vectorized_text)[0]
 
 # 4 display result
 if predection == 1:
