@@ -56,11 +56,12 @@ transformed_text = transform_text(input_sms)
 vectorized_text = vectorizer.transform([transformed_text])
 
 # 3 predect output
+predection = ""
 if st.button("click"):
   predection = model.predict(vectorized_text)[0]
 
 # 4 display result
 if predection == 1:
   st.error("🚨 Spam Message")
-else:
+elif predection == 0:
   st.success("✅ Not Spam")
